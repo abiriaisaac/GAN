@@ -46,32 +46,6 @@ def load_and_analyze_data(file_path):
     
     print("\n=== Data Summary ===")
     print(data.describe())
-    
-    # Correlation analysis
-    fig = plt.figure(figsize=(15, 12))
-    gs = GridSpec(2, 2, figure=fig)
-    
-    # Correlation heatmap
-    ax1 = fig.add_subplot(gs[0, :])
-    corr_matrix = data.corr()
-    mask = np.triu(np.ones_like(corr_matrix, dtype=bool))
-    sns.heatmap(corr_matrix, mask=mask, annot=True, cmap='coolwarm', 
-                center=0, fmt=".2f", linewidths=0.5, ax=ax1)
-    ax1.set_title('Feature Correlation Matrix', fontsize=14, pad=12)
-    
-    # Pairplot of key relationships
-    ax2 = fig.add_subplot(gs[1, 0])
-    sns.scatterplot(data=data, x='stress', y='cycle', ax=ax2)
-    ax2.set_title('Stress Amplitude vs Cycle', fontsize=12)
-    
-    ax3 = fig.add_subplot(gs[1, 1])
-    sns.scatterplot(data=data, x='stress', y='defect_size', ax=ax3)
-    ax3.set_title('Stress Amplitude vs Defect Size', fontsize=12)
-    
-    plt.suptitle('Initial Data Analysis', fontsize=16, y=1.02)
-    plt.tight_layout()
-    plt.show()
-    
     return data
 
 # ======================
