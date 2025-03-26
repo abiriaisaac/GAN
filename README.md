@@ -23,5 +23,5 @@ This project implements a Generative Adversarial Network (GAN) to generate synth
 1.Install the necessary libraries
 2. Clone this repository:
    ```bash
-   git clone https://github.com/abiriaisaac/Generative Adversarial Network .git
+   git clone https://github.com/abiriaisaac/Generative-Adversarial-Network.git
    cd fatigue-data-gan
